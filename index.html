@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drama Peace - Theatre of the Lost and Found</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        /* Colors */
+        :root {
+            --primary: #8b5a3c;
+            --accent: #d4a574;
+            --dark: #2c2c2c;
+            --light: #f5f1ed;
+            --text: #3a3a3a;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('red2.png') center/cover no-repeat;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero .author {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: var(--accent);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 0.9rem 2.5rem;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* Book Section */
+        .book-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .book-image {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .book-content h2 {
+            margin-top: 0;
+        }
+
+        .book-details {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .book-details p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .review {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .newsletter h2 {
+            color: white;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 2rem auto;
+            gap: 0.5rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            padding: 0.9rem 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 3px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: white;
+        }
+
+        /* Links */
+        .links-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .link-group h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-group a {
+            display: block;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .link-group a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        footer p {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin: 0.3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .book-section,
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Drama Peace</div>
+        <div>
+            <a href="#book">Book</a>
+            <a href="#about">About Sharon</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Theatre of the Lost and Found</h1>
+        <p class="subtitle">Drama Education with Marginalised Youth</p>
+        <p class="author">By Sharon Coyne</p>
+        <a href="https://www.routledge.com/Theatre-of-the-Lost-and-Found-Drama-Education-with-Marginalised-Youth/Coyne/p/book/9781032950631" class="cta-button">Get the Book</a>
+    </section>
+
+    <!-- Book Section -->
+    <section id="book">
+        <div class="container">
+            <div class="book-section">
+                <div>
+                    <img src="bookcover1.png" alt="Theatre of the Lost and Found" class="book-image">
+                </div>
+                <div class="book-content">
+                    <h2>The Story</h2>
+                    <p>Based on a longitudinal study with disadvantaged youth, this book provides an auto-ethnographic perspective on the complexities of working as a practitioner within marginalised communities.</p>
+                    
+                    <p>The author tells the story of the <strong>Penwithen Boys project</strong>, highlighting the power of drama intervention at a critical time in the participants' adolescence. It explores the impact of excluding young people from mainstream education and how young people can respond differently in a drama environment.</p>
+
+                    <p>Through authentic voices of the boys, now men, the book shows that applied drama can have <strong>life-changing effects</strong>. Sharon's 17-year quest to track down the participants reveals the lasting impact of drama intervention on their lives.</p>
+
+                    <div class="book-details">
+                        <p><strong>Published:</strong> 2026</p>
+                        <p><strong>By:</strong> Sharon Coyne</p>
+                        <p><strong>Publisher:</strong> Routledge</p>
+                        <p><strong>ISBN:</strong> 9781032950631</p>
+                    </div>
+
+                    <a href="https://www.routledge.com/Theatre-of-the-Lost-and-Found-Drama-Education-with-Marginalised-Youth/Coyne/p/book/9781032950631" class="cta-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Sharon Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-content">
+                    <h2>About Sharon Coyne</h2>
+                    <p>Sharon Coyne is an accomplished applied drama practitioner with decades of experience working with some of society's most marginalised communities.</p>
+
+                    <p><strong>Artistic Director of Vita Nova</strong>, a community theatre group for those in recovery from drug and alcohol abuse, Sharon has spent her career celebrating those who have often been left behind.</p>
+
+                    <p>For many years, she was co-director of <strong>Bournemouth Theatre in Education</strong>, delivering TIE programmes across all age ranges and devising large-scaled community theatre projects.</p>
+
+                    <p>Her extensive work with marginalised communities has included refugees, Gypsies, Travellers, and excluded young people. She sees theatre as a transformative tool and is Theatre Officer for National Drama.</p>
+
+                    <p>This book represents Sharon's commitment to demonstrating how applied drama practices can bridge the gap between policy and lived experience, offering invaluable insights for practitioners and policymakers alike.</p>
+                </div>
+                <div>
+                    <img src="sharon1.png" alt="Sharon Coyne" class="about-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Critical Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2>Critical Acclaim</h2>
+            <div class="reviews-grid">
+                <div class="review">
+                    <p>"Sharon Coyne's <em>Theatre of the Lost and Found</em> is a profound testament to the transformative power of applied drama. Building on the robust empirical foundation of the DICE research, Coyne skilfully interweaves her autoethnographic narrative with the journey of the Penwithen boys, her youth theatre group, from the 'shadowland' of exclusion to a 'liminal space' of hope and heroism."</p>
+                    <p class="review-author">— Adam Cziboly, Professor of Drama and Applied Theatre, Western Norway University of Applied Sciences, Coordinator of Theatre SPACEs</p>
+                </div>
+
+                <div class="review">
+                    <p>"This unique, heart-felt study of the long-term effects of engaging with drama demonstrates with conviction and courage how much society is in need of such practices. This book is a vital resource for practitioners and academics alike."</p>
+                    <p class="review-author">— Tim Prentki, Emeritus Professor of Theatre for Development, University of Winchester, UK</p>
+                </div>
+
+                <div class="review">
+                    <p>"Honest, brave, insightful account by a gifted applied drama practitioner about creating a play with excluded teenage boys. It's rare to hear the reflections of participants almost two decades later and discover how the journey has affected them all."</p>
+                    <p class="review-author">— Dr Beverley Naidoo, Carnegie-winning author of <em>The Other Side of Truth</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sharon's Gallery -->
+    <section style="background: var(--light); padding: 4rem 2rem;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Sharon's Work</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="border-radius: 5px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <img src="sharon2.jpeg" alt="Sharon Coyne" style="width: 100%; height: 400px; object-fit: cover;">
+                </div>
+                <div style="border-radius: 5px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <img src="sharon3.png" alt="Sharon Coyne" style="width: 100%; height: 400px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources & Work Section -->
+    <section id="resources">
+        <div class="container">
+            <h2>My Work & Projects</h2>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem;">
+                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--primary);">
+                    <h3>Vita Nova - Community Theatre in Recovery</h3>
+                    <p><strong>Role:</strong> Artistic Director</p>
+                    <p>Vita Nova is a community theatre group dedicated to those in recovery from drug and alcohol abuse. Through collaborative theatre-making, we create spaces for healing, celebration, and transformation. Members develop confidence, skills, and lasting connections through the creative process.</p>
+                    <p><a href="https://vitanova.co.uk" style="color: var(--primary); font-weight: 600;">Visit Vita Nova →</a></p>
+                </div>
+
+                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--accent);">
+                    <h3>Work with Refugees & Asylum Seekers</h3>
+                    <p>Over many years, I have developed and delivered applied drama programmes with refugee communities. These projects use theatre as a vehicle for integration, voice, and celebrating cultural identity while building solidarity and understanding across diverse communities.</p>
+                    <p><em>Specific projects and timelines to be added...</em></p>
+                </div>
+
+                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--primary);">
+                    <h3>Gypsy & Traveller Theatre Projects</h3>
+                    <p>I have extensive experience working with Gypsy and Traveller communities through applied drama. These projects celebrate cultural heritage, address social justice issues, and create platforms for community voices often marginalised in mainstream society.</p>
+                    <p><em>Project details and participant testimonies coming soon...</em></p>
+                </div>
+
+                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--accent);">
+                    <h3>Penwithen Boys Project</h3>
+                    <p><strong>Featured in:</strong> Theatre of the Lost and Found</p>
+                    <p>A longitudinal study spanning nearly two decades, tracking the lives of excluded teenagers who participated in youth theatre. The project demonstrates the lasting impact of drama intervention on resilience, relationships, and life outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: var(--light); padding: 4rem 2rem;">
+        <div class="container">
+            <h2 style="text-align: center;">Get in Touch</h2>
+            <p style="text-align: center; margin-bottom: 3rem;">For inquiries about speaking engagements, workshops, collaborations, or general questions</p>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form style="display: grid; gap: 1.5rem;">
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Name</label>
+                        <input type="text" placeholder="Your name" style="width: 100%; padding: 0.9rem 1rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem;" required>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Email</label>
+                        <input type="email" placeholder="your@email.com" style="width: 100%; padding: 0.9rem 1rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem;" required>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Subject</label>
+                        <input type="text" placeholder="Speaking engagement, collaboration, etc." style="width: 100%; padding: 0.9rem 1rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem;" required>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Message</label>
+                        <textarea placeholder="Your message..." style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem; min-height: 150px; font-family: inherit;" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                </form>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem;">
+                    <div style="text-align: center;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Vita Nova</h4>
+                        <p style="font-size: 0.9rem;">Community theatre group</p>
+                        <p><a href="https://vitanova.co.uk" style="color: var(--primary);">vitanova.co.uk</a></p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Follow</h4>
+                        <p style="font-size: 0.9rem;">Social media & updates</p>
+                        <p><a href="#" style="color: var(--primary);">@dramapeace</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Connected</h2>
+            <p>Get updates on new talks, resources, and Sharon's work in applied drama</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Join</button>
+            </form>
+            <p style="font-size: 0.85rem; margin-top: 1rem;">We respect your privacy</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="color: white; margin-bottom: 1.5rem;">Drama Peace</h3>
+            <div class="links-section">
+                <div class="link-group">
+                    <h3>Book</h3>
+                    <a href="https://www.routledge.com/Theatre-of-the-Lost-and-Found-Drama-Education-with-Marginalised-Youth/Coyne/p/book/9781032950631">Buy on Routledge</a>
+                </div>
+                <div class="link-group">
+                    <h3>About</h3>
+                    <a href="#about">Sharon Coyne</a>
+                    <a href="https://vitanova.co.uk">Vita Nova</a>
+                </div>
+                <div class="link-group">
+                    <h3>Resources</h3>
+                    <a href="#resources">Applied Drama</a>
+                    <a href="#resources">Talks & Materials</a>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+
+            <p>&copy; 2026 Drama Peace. All rights reserved.</p>
+            <p>Theatre of the Lost and Found by Sharon Coyne | Published by Routledge</p>
+        </div>
+    </footer>
+
+</body>
+</html>
