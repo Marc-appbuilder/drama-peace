@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Theatre of the Lost and Found by Dr Sharon Coyne - A longitudinal study exploring drama education with marginalised youth, published by Routledge 2026.">
+    <meta name="keywords" content="drama education, applied theatre, marginalised youth, Sharon Coyne, Theatre of the Lost and Found, Routledge">
+    <meta name="author" content="Dr Sharon Coyne">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Drama Peace - Theatre of the Lost and Found">
+    <meta property="og:description" content="A profound study on drama education with marginalised youth by Dr Sharon Coyne">
+    <meta property="og:image" content="bookcover1.png">
+    <meta property="og:url" content="https://dramapeace.co.uk">
+
     <title>Drama Peace - Theatre of the Lost and Found</title>
     <style>
         * {
@@ -56,8 +67,11 @@
             transition: color 0.3s;
         }
 
-        nav a:hover {
+        nav a:hover,
+        nav a:focus {
             color: var(--primary);
+            outline: 2px solid var(--primary);
+            outline-offset: 4px;
         }
 
         /* Hero Section */
@@ -82,7 +96,7 @@
         }
 
         .hero .subtitle {
-            font-size: 1.3rem;
+            font-size: 2rem;
             font-weight: 300;
             margin-bottom: 2rem;
             color: var(--accent);
@@ -108,9 +122,12 @@
             margin: 0.5rem;
         }
 
-        .cta-button:hover {
+        .cta-button:hover,
+        .cta-button:focus {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
         }
 
         /* Main Content */
@@ -336,6 +353,28 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hide header on scroll down */
+        nav.hidden {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        nav {
+            transition: transform 0.3s ease;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav {
@@ -365,6 +404,19 @@
             .newsletter-form {
                 flex-direction: column;
             }
+
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+
+            /* Mobile Work & Projects */
+            section#resources .container > div > div {
+                grid-template-columns: 1fr !important;
+            }
+
+            section#contact > div > div > div {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -384,7 +436,7 @@
     <section class="hero">
         <h1>Theatre of the Lost and Found</h1>
         <p class="subtitle">Drama Education with Marginalised Youth</p>
-        <p class="author">By Sharon Coyne</p>
+        <p class="author">By Dr Sharon Coyne</p>
         <a href="https://www.routledge.com/Theatre-of-the-Lost-and-Found-Drama-Education-with-Marginalised-Youth/Coyne/p/book/9781032950631" class="cta-button">Get the Book</a>
     </section>
 
@@ -405,7 +457,7 @@
 
                     <div class="book-details">
                         <p><strong>Published:</strong> 2026</p>
-                        <p><strong>By:</strong> Sharon Coyne</p>
+                        <p><strong>By:</strong> Dr Sharon Coyne</p>
                         <p><strong>Publisher:</strong> Routledge</p>
                         <p><strong>ISBN:</strong> 9781032950631</p>
                     </div>
@@ -421,19 +473,19 @@
         <div class="container">
             <div class="about-section">
                 <div class="about-content">
-                    <h2>About Sharon Coyne</h2>
-                    <p>Sharon Coyne is an accomplished applied drama practitioner with decades of experience working with some of society's most marginalised communities.</p>
+                    <h2>About Dr Sharon Coyne</h2>
+                    <p>Dr Sharon Coyne is an accomplished applied drama practitioner with decades of experience working with some of society's most marginalised communities.</p>
 
-                    <p><strong>Artistic Director of Vita Nova</strong>, a community theatre group for those in recovery from drug and alcohol abuse, Sharon has spent her career celebrating those who have often been left behind.</p>
+                    <p><strong>Artistic Director of <a href="https://vitanova.co.uk" style="color: var(--primary); text-decoration: underline;">Vita Nova</a></strong>, a community theatre group for those in recovery from drug and alcohol abuse, Sharon has spent her career celebrating those who have often been left behind.</p>
 
                     <p>For many years, she was co-director of <strong>Bournemouth Theatre in Education</strong>, delivering TIE programmes across all age ranges and devising large-scaled community theatre projects.</p>
 
-                    <p>Her extensive work with marginalised communities has included refugees, Gypsies, Travellers, and excluded young people. She sees theatre as a transformative tool and is Theatre Officer for National Drama.</p>
+                    <p>Her extensive work with marginalised communities has included refugees, Gypsies, Travellers, and excluded young people. She sees theatre as a transformative tool and is Theatre Officer for <a href="https://www.nationaldrama.org.uk" style="color: var(--primary); text-decoration: underline;">National Drama</a>.</p>
 
                     <p>This book represents Sharon's commitment to demonstrating how applied drama practices can bridge the gap between policy and lived experience, offering invaluable insights for practitioners and policymakers alike.</p>
                 </div>
                 <div>
-                    <img src="sharon1.png" alt="Sharon Coyne" class="about-image">
+                    <img src="sharon1.png" alt="Dr Sharon Coyne" class="about-image">
                 </div>
             </div>
         </div>
@@ -442,10 +494,10 @@
     <!-- Critical Reviews -->
     <section class="reviews">
         <div class="container">
-            <h2>Critical Acclaim</h2>
+            <h2>What Critics Are Saying</h2>
             <div class="reviews-grid">
                 <div class="review">
-                    <p>"Sharon Coyne's <em>Theatre of the Lost and Found</em> is a profound testament to the transformative power of applied drama. Building on the robust empirical foundation of the DICE research, Coyne skilfully interweaves her autoethnographic narrative with the journey of the Penwithen boys, her youth theatre group, from the 'shadowland' of exclusion to a 'liminal space' of hope and heroism."</p>
+                    <p>"Dr Sharon Coyne's <em>Theatre of the Lost and Found</em> is a profound testament to the transformative power of applied drama. Building on the robust empirical foundation of the DICE research, Coyne skilfully interweaves her autoethnographic narrative with the journey of the Penwithen boys, her youth theatre group, from the 'shadowland' of exclusion to a 'liminal space' of hope and heroism."</p>
                     <p class="review-author">— Adam Cziboly, Professor of Drama and Applied Theatre, Western Norway University of Applied Sciences, Coordinator of Theatre SPACEs</p>
                 </div>
 
@@ -466,12 +518,9 @@
     <section style="background: var(--light); padding: 4rem 2rem;">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 3rem;">Sharon's Work</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div style="border-radius: 5px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <img src="sharon2.jpeg" alt="Sharon Coyne" style="width: 100%; height: 400px; object-fit: cover;">
-                </div>
-                <div style="border-radius: 5px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <img src="sharon3.png" alt="Sharon Coyne" style="width: 100%; height: 400px; object-fit: cover;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <img src="sharon3.png" alt="Dr Sharon Coyne" style="width: 100%; height: auto; object-fit: cover; transition: transform 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
             </div>
         </div>
@@ -482,29 +531,51 @@
         <div class="container">
             <h2>My Work & Projects</h2>
             <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem;">
+                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--primary); display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h3>Vita Nova - Community Theatre in Recovery</h3>
+                        <p><strong>Role:</strong> Artistic Director</p>
+                        <p><a href="https://vitanova.co.uk" style="color: var(--primary); text-decoration: underline;">Vita Nova</a> is a community theatre group dedicated to those in recovery from drug and alcohol abuse. Through collaborative theatre-making, we create spaces for healing, celebration, and transformation. Members develop confidence, skills, and lasting connections through the creative process.</p>
+                        <p><a href="https://vitanova.co.uk" style="color: var(--primary); font-weight: 600;">Visit Vita Nova →</a></p>
+                    </div>
+                    <div style="overflow: hidden; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);">
+                        <img src="vita.jpg" alt="Vita Nova" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.4s ease, filter 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.08) rotate(1deg)'; this.style.filter='brightness(1.1)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.filter='brightness(1)'">
+                    </div>
+                </div>
+
+                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--primary); display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: center;">
+                    <div style="overflow: hidden; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);">
+                        <img src="ghostgypsy.png" alt="Gypsy & Traveller Theatre" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateX(-10px) scale(1.05)'; this.parentElement.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateX(0) scale(1)'; this.parentElement.style.boxShadow='0 5px 15px rgba(0,0,0,0.15)'">
+                    </div>
+                    <div>
+                        <h3>Gypsy & Traveller Theatre Projects</h3>
+                        <p>I have extensive experience working with Gypsy and Traveller communities through applied drama. These projects celebrate cultural heritage, address social justice issues, and create platforms for community voices often marginalised in mainstream society.</p>
+                        <p><em>Project details and participant testimonies coming soon...</em></p>
+                    </div>
+                </div>
+
+                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--accent); display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h3>Penwithen Boys Project</h3>
+                        <p><strong>Featured in:</strong> Theatre of the Lost and Found</p>
+                        <p>A longitudinal study spanning nearly two decades, tracking the lives of excluded teenagers who participated in youth theatre. The project demonstrates the lasting impact of drama intervention on resilience, relationships, and life outcomes.</p>
+                    </div>
+                    <div style="overflow: hidden; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);">
+                        <img src="boys.jpg" alt="Penwithen Boys Project" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.5s ease, opacity 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px) scale(1.06)'; this.style.opacity='0.95'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.opacity='1'">
+                    </div>
+                </div>
+
                 <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--primary);">
-                    <h3>Vita Nova - Community Theatre in Recovery</h3>
-                    <p><strong>Role:</strong> Artistic Director</p>
-                    <p>Vita Nova is a community theatre group dedicated to those in recovery from drug and alcohol abuse. Through collaborative theatre-making, we create spaces for healing, celebration, and transformation. Members develop confidence, skills, and lasting connections through the creative process.</p>
-                    <p><a href="https://vitanova.co.uk" style="color: var(--primary); font-weight: 600;">Visit Vita Nova →</a></p>
-                </div>
-
-                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--accent);">
-                    <h3>Work with Refugees & Asylum Seekers</h3>
-                    <p>Over many years, I have developed and delivered applied drama programmes with refugee communities. These projects use theatre as a vehicle for integration, voice, and celebrating cultural identity while building solidarity and understanding across diverse communities.</p>
-                    <p><em>Specific projects and timelines to be added...</em></p>
-                </div>
-
-                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--primary);">
-                    <h3>Gypsy & Traveller Theatre Projects</h3>
-                    <p>I have extensive experience working with Gypsy and Traveller communities through applied drama. These projects celebrate cultural heritage, address social justice issues, and create platforms for community voices often marginalised in mainstream society.</p>
-                    <p><em>Project details and participant testimonies coming soon...</em></p>
-                </div>
-
-                <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--accent);">
-                    <h3>Penwithen Boys Project</h3>
-                    <p><strong>Featured in:</strong> Theatre of the Lost and Found</p>
-                    <p>A longitudinal study spanning nearly two decades, tracking the lives of excluded teenagers who participated in youth theatre. The project demonstrates the lasting impact of drama intervention on resilience, relationships, and life outcomes.</p>
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h3>The Poole Passion 2008–2018</h3>
+                        <p><strong>Through the Eyes of a Child</strong> by Dr Sharon Coyne</p>
+                        <p style="max-width: 800px; margin: 0 auto;">A community theatre production performed biennially at Easter, bringing the story of Jesus' final days to life through the unique perspective of a child's eyes. Created in 2009, The Poole Passion became a beloved tradition, engaging hundreds of community members in a powerful exploration of faith, sacrifice, and redemption through collaborative performance.</p>
+                    </div>
+                    <div style="max-width: 500px; margin: 0 auto;">
+                        <div style="overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                            <img src="passion.jpg" alt="The Poole Passion" style="width: 100%; height: auto; object-fit: cover; transition: transform 0.4s ease, filter 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.03)'; this.style.filter='brightness(1.05) saturate(1.1)'" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(1) saturate(1)'">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -518,26 +589,11 @@
             <h2 style="text-align: center;">Get in Touch</h2>
             <p style="text-align: center; margin-bottom: 3rem;">For inquiries about speaking engagements, workshops, collaborations, or general questions</p>
             
-            <div style="max-width: 600px; margin: 0 auto;">
-                <form style="display: grid; gap: 1.5rem;">
-                    <div>
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Name</label>
-                        <input type="text" placeholder="Your name" style="width: 100%; padding: 0.9rem 1rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem;" required>
-                    </div>
-                    <div>
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Email</label>
-                        <input type="email" placeholder="your@email.com" style="width: 100%; padding: 0.9rem 1rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem;" required>
-                    </div>
-                    <div>
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Subject</label>
-                        <input type="text" placeholder="Speaking engagement, collaboration, etc." style="width: 100%; padding: 0.9rem 1rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem;" required>
-                    </div>
-                    <div>
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text);">Message</label>
-                        <textarea placeholder="Your message..." style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 3px; font-size: 1rem; min-height: 150px; font-family: inherit;" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
-                </form>
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div style="background: white; padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 3rem;">
+                    <p style="font-size: 1.3rem; color: var(--primary); font-weight: 600; margin-bottom: 1.5rem;">sharon@dramapeace.co.uk</p>
+                    <a href="mailto:sharon@dramapeace.co.uk" class="cta-button" style="display: inline-block;">Email Me</a>
+                </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem;">
                     <div style="text-align: center;">
@@ -579,7 +635,7 @@
                 </div>
                 <div class="link-group">
                     <h3>About</h3>
-                    <a href="#about">Sharon Coyne</a>
+                    <a href="#about">Dr Sharon Coyne</a>
                     <a href="https://vitanova.co.uk">Vita Nova</a>
                 </div>
                 <div class="link-group">
@@ -597,9 +653,55 @@
             </div>
 
             <p>&copy; 2026 Drama Peace. All rights reserved.</p>
-            <p>Theatre of the Lost and Found by Sharon Coyne | Published by Routledge</p>
+            <p>Theatre of the Lost and Found by Dr Sharon Coyne | Published by Routledge</p>
         </div>
     </footer>
+
+    <script>
+        // Hide/Show Header on Scroll
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+        const scrollThreshold = 100;
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > scrollThreshold) {
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    nav.classList.add('hidden');
+                } else {
+                    // Scrolling up
+                    nav.classList.remove('hidden');
+                }
+            } else {
+                // At top of page, always show
+                nav.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
+        // Fade in elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and images
+        document.querySelectorAll('section, .book-image, .about-image, img').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
