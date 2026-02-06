@@ -618,6 +618,7 @@
                 padding: 0.75rem 1.5rem;
                 font-size: 0.85rem;
                 max-width: 200px;
+                width: auto;
             }
 
             .review {
@@ -631,8 +632,13 @@
             }
 
             /* Passion image should be larger */
-            section#work img[src="passion.jpg"] {
-                max-height: none !important;
+            section#work img[alt="The Poole Passion"] {
+                max-height: 400px !important;
+            }
+
+            /* Hero button on mobile */
+            .hero .cta-button {
+                max-width: 180px !important;
             }
 
             /* Talks & Media grid - force 1 column */
@@ -709,8 +715,16 @@
             .cta-button {
                 padding: 0.8rem 1.2rem;
                 font-size: 0.85rem;
-                width: 100%;
-                max-width: 280px;
+                max-width: 160px;
+            }
+
+            .hero .cta-button {
+                max-width: 160px !important;
+            }
+
+            /* Passion image larger on small screens */
+            section#work img[alt="The Poole Passion"] {
+                max-height: 350px !important;
             }
 
             nav {
@@ -1057,6 +1071,7 @@
 
             <p>&copy; 2026 Drama Peace. All rights reserved.</p>
             <p>Theatre of the Lost and Found by Dr Sharon Coyne | Published by Routledge</p>
+            <p style="margin-top: 1rem;">Made by <a href="https://gladetech.co.uk" style="color: var(--accent); text-decoration: none;" target="_blank">Glade Tech</a></p>
         </div>
     </footer>
 
