@@ -153,28 +153,31 @@
         }
 
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: white;
             color: var(--primary);
             padding: 1rem 2.5rem;
             text-decoration: none;
-            border-radius: 3px;
+            border-radius: 8px;
             font-weight: 600;
-            transition: all 0.3s;
+            font-size: 1rem;
+            transition: all 0.3s ease;
             margin: 0.5rem;
             min-height: 48px;
             min-width: 48px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border: none;
         }
 
         .cta-button:hover,
         .cta-button:focus {
+            background: var(--light);
+            color: var(--dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+            outline: none;
         }
 
         /* Main Content */
@@ -572,8 +575,23 @@
                         <p><strong>ISBN:</strong> 9781032950631</p>
                     </div>
 
-                    <a href="https://www.routledge.com/Theatre-of-the-Lost-and-Found-Drama-Education-with-Marginalised-Youth/Coyne/p/book/9781032950631" class="cta-button">Buy Now</a>
+                    <!-- Pre-order Notice -->
+                    <div style="background: linear-gradient(135deg, #f5f1ed 0%, #e8dfd6 100%); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent); box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                        <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: var(--primary); font-size: 1.05rem;">Pre-Order Information</p>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem; color: #555;">Available for pre-order on <strong>April 8, 2026</strong></p>
+                        <p style="margin: 0.3rem 0; font-size: 0.95rem; color: #555;">Item will ship after <strong>April 29, 2026</strong></p>
+                    </div>
+
+                    <a href="https://www.routledge.com/Theatre-of-the-Lost-and-Found-Drama-Education-with-Marginalised-Youth/Coyne/p/book/9781032950631" class="cta-button">Pre-Order Now</a>
                 </div>
+            </div>
+
+            <!-- Promotional Banner -->
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="https://www.routledge.com/Theatre-of-the-Lost-and-Found-Drama-Education-with-Marginalised-Youth/Coyne/p/book/9781032950631" target="_blank" style="display: block; max-width: 800px; margin: 0 auto; transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 20px rgba(0,0,0,0.15)'">
+                    <img src="Email Signature banner.png" alt="Save 20% with code 26ESA1 at routledge.com - Valid until June 30, 2026" style="width: 100%; height: auto; display: block;">
+                </a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Use code <strong style="color: var(--primary);">26ESA1</strong> at checkout for 20% off • Valid through June 30, 2026</p>
             </div>
         </div>
     </section>
