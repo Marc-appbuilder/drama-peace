@@ -4,17 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Theatre of the Lost and Found by Dr Sharon Coyne - A longitudinal study exploring drama education with marginalised youth, published by Routledge 2026.">
-    <meta name="keywords" content="drama education, applied theatre, marginalised youth, Sharon Coyne, Theatre of the Lost and Found, Routledge">
+    <meta name="keywords" content="drama education, applied theatre, marginalised youth, Sharon Coyne, Theatre of the Lost and Found, Routledge, Vita Nova, community theatre">
     <meta name="author" content="Dr Sharon Coyne">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#8b5a3c">
+    <link rel="canonical" href="https://dramapeace.co.uk">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Drama Peace - Theatre of the Lost and Found">
     <meta property="og:description" content="A profound study on drama education with marginalised youth by Dr Sharon Coyne">
-    <meta property="og:image" content="bookcover1.png">
+    <meta property="og:image" content="https://dramapeace.co.uk/bookcover1.png">
     <meta property="og:url" content="https://dramapeace.co.uk">
+    <meta property="og:site_name" content="Drama Peace">
 
-    <title>Drama Peace - Theatre of the Lost and Found</title>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Drama Peace - Theatre of the Lost and Found">
+    <meta name="twitter:description" content="A profound study on drama education with marginalised youth by Dr Sharon Coyne">
+    <meta name="twitter:image" content="https://dramapeace.co.uk/bookcover1.png">
+
+    <title>Drama Peace - Theatre of the Lost and Found | Dr Sharon Coyne</title>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Theatre of the Lost and Found: Drama Education with Marginalised Youth",
+      "author": {
+        "@type": "Person",
+        "name": "Dr Sharon Coyne",
+        "jobTitle": "Applied Theatre Practitioner and Playwright",
+        "affiliation": ["Vita Nova", "National Drama", "Surya Arts"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Routledge"
+      },
+      "datePublished": "2026",
+      "isbn": "9781032950631",
+      "description": "Based on a longitudinal study with disadvantaged youth, this book provides an auto-ethnographic perspective on the complexities of working as a practitioner within marginalised communities.",
+      "bookFormat": "https://schema.org/Hardcover",
+      "inLanguage": "en",
+      "about": ["Drama Education", "Applied Theatre", "Marginalised Youth", "Community Theatre"],
+      "image": "https://dramapeace.co.uk/bookcover1.png",
+      "url": "https://dramapeace.co.uk"
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -65,6 +103,10 @@
             margin-left: 2rem;
             font-size: 0.95rem;
             transition: color 0.3s;
+            padding: 0.5rem 0.75rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
         }
 
         nav a:hover,
@@ -114,12 +156,17 @@
             display: inline-block;
             background: white;
             color: var(--primary);
-            padding: 0.9rem 2.5rem;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 3px;
             font-weight: 600;
             transition: all 0.3s;
             margin: 0.5rem;
+            min-height: 48px;
+            min-width: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .cta-button:hover,
@@ -341,6 +388,10 @@
             text-decoration: none;
             margin: 0 1rem;
             transition: color 0.3s;
+            padding: 0.5rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
         }
 
         .social-links a:hover {
@@ -380,11 +431,13 @@
             nav {
                 flex-direction: column;
                 gap: 1rem;
+                padding: 1rem;
             }
 
             nav a {
                 margin-left: 0;
                 margin: 0.3rem;
+                padding: 0.75rem 1rem;
             }
 
             .hero h1 {
@@ -401,6 +454,10 @@
                 font-size: 1.8rem;
             }
 
+            h3 {
+                font-size: 1.3rem;
+            }
+
             .newsletter-form {
                 flex-direction: column;
             }
@@ -410,12 +467,65 @@
             }
 
             /* Mobile Work & Projects */
-            section#resources .container > div > div {
+            section#work .container > div > div {
                 grid-template-columns: 1fr !important;
             }
 
             section#contact > div > div > div {
                 grid-template-columns: 1fr !important;
+            }
+
+            .social-links a {
+                margin: 0.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.6rem;
+                letter-spacing: 1px;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            nav {
+                padding: 0.75rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -427,7 +537,7 @@
         <div>
             <a href="#book">Book</a>
             <a href="#about">About Sharon</a>
-            <a href="#resources">Resources</a>
+            <a href="#work">Work</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -449,7 +559,7 @@
                 </div>
                 <div class="book-content">
                     <h2>The Story</h2>
-                    <p>Based on a longitudinal study with disadvantaged youth, this book provides an auto-ethnographic perspective on the complexities of working as a practitioner within marginalised communities.</p>
+                    <p>Based on a longitudinal study with disadvantaged youth, this book provides an <strong>auto-ethnographic</strong> perspective on the complexities of working as a practitioner within marginalised communities.</p>
                     
                     <p>The author tells the story of the <strong>Penwithen Boys project</strong>, highlighting the power of drama intervention at a critical time in the participants' adolescence. It explores the impact of excluding young people from mainstream education and how young people can respond differently in a drama environment.</p>
 
@@ -474,15 +584,11 @@
             <div class="about-section">
                 <div class="about-content">
                     <h2>About Dr Sharon Coyne</h2>
-                    <p>Dr Sharon Coyne is an accomplished applied drama practitioner with decades of experience working with some of society's most marginalised communities.</p>
+                    <p>Dr Sharon Coyne is applied theatre practitioner, playwright and Artistic Director of <a href="https://vitanova.co.uk" style="color: var(--primary); text-decoration: underline;">Vita Nova</a>, a community theatre group for those in recovery from drug and alcohol abuse. She founded the organisation with a small group of recovering addicts in 1999. Originally a short project emerging from Bournemouth Theatre in Education (BTIE) where she was co-director, Vita Nova has become an established national community theatre.</p>
 
-                    <p><strong>Artistic Director of <a href="https://vitanova.co.uk" style="color: var(--primary); text-decoration: underline;">Vita Nova</a></strong>, a community theatre group for those in recovery from drug and alcohol abuse, Sharon has spent her career celebrating those who have often been left behind.</p>
+                    <p>She has also been Artistic Director of The Poole Passion and lectured at Winchester University in Applied Drama, TIE and Theatre for Development. Her work with marginalised communities has included refugees, Gypsies and Travellers and excluded young people. She sees theatre as a way of celebrating those who have often been left behind.</p>
 
-                    <p>For many years, she was co-director of <strong>Bournemouth Theatre in Education</strong>, delivering TIE programmes across all age ranges and devising large-scaled community theatre projects.</p>
-
-                    <p>Her extensive work with marginalised communities has included refugees, Gypsies, Travellers, and excluded young people. She sees theatre as a transformative tool and is Theatre Officer for <a href="https://www.nationaldrama.org.uk" style="color: var(--primary); text-decoration: underline;">National Drama</a>.</p>
-
-                    <p>This book represents Sharon's commitment to demonstrating how applied drama practices can bridge the gap between policy and lived experience, offering invaluable insights for practitioners and policymakers alike.</p>
+                    <p>She is also Theatre Officer for <a href="https://www.nationaldrama.org.uk" style="color: var(--primary); text-decoration: underline;">National Drama</a>.</p>
                 </div>
                 <div>
                     <img src="sharon1.png" alt="Dr Sharon Coyne" class="about-image">
@@ -526,10 +632,10 @@
         </div>
     </section>
 
-    <!-- Resources & Work Section -->
-    <section id="resources">
+    <!-- Selected Work Section -->
+    <section id="work">
         <div class="container">
-            <h2>My Work & Projects</h2>
+            <h2>Selected Work</h2>
             <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem;">
                 <div style="background: var(--light); padding: 2rem; border-radius: 5px; border-left: 4px solid var(--primary); display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
                     <div>
@@ -539,7 +645,7 @@
                         <p><a href="https://vitanova.co.uk" style="color: var(--primary); font-weight: 600;">Visit Vita Nova →</a></p>
                     </div>
                     <div style="overflow: hidden; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.15);">
-                        <img src="vita.jpg" alt="Vita Nova" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.4s ease, filter 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.08) rotate(1deg)'; this.style.filter='brightness(1.1)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.filter='brightness(1)'">
+                        <img src="vita.jpg" alt="Vita Nova" style="width: 100%; height: 300px; object-fit: cover; object-position: center top; transition: transform 0.4s ease, filter 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.08) rotate(1deg)'; this.style.filter='brightness(1.1)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.filter='brightness(1)'">
                     </div>
                 </div>
 
@@ -571,7 +677,7 @@
                         <p><strong>Through the Eyes of a Child</strong> by Dr Sharon Coyne</p>
                         <p style="max-width: 800px; margin: 0 auto;">A community theatre production performed biennially at Easter, bringing the story of Jesus' final days to life through the unique perspective of a child's eyes. Created in 2009, The Poole Passion became a beloved tradition, engaging hundreds of community members in a powerful exploration of faith, sacrifice, and redemption through collaborative performance.</p>
                     </div>
-                    <div style="max-width: 500px; margin: 0 auto;">
+                    <div style="max-width: 700px; margin: 0 auto;">
                         <div style="overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
                             <img src="passion.jpg" alt="The Poole Passion" style="width: 100%; height: auto; object-fit: cover; transition: transform 0.4s ease, filter 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.03)'; this.style.filter='brightness(1.05) saturate(1.1)'" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(1) saturate(1)'">
                         </div>
@@ -581,7 +687,58 @@
         </div>
     </section>
 
+    <!-- Talks & Media Section -->
+    <section id="media" style="background: var(--light); padding: 4rem 2rem;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Talks & Media</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #555; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Explore videos, podcasts, and recorded talks on applied drama, community theatre, and working with marginalised communities.</p>
 
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <!-- Videos & Talks Card -->
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid var(--primary);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+                    <div style="width: 60px; height: 60px; background: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 1rem;">Videos & Talks</h3>
+                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 1.5rem;">Recorded presentations, workshops, and speaking engagements on applied theatre practice.</p>
+                    <p style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">Coming Soon</p>
+                </div>
+
+                <!-- Podcasts Card -->
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid var(--accent);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+                    <div style="width: 60px; height: 60px; background: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 1rem;">Podcasts</h3>
+                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 1.5rem;">Conversations on drama education, community practice, and social justice through theatre.</p>
+                    <p style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">Coming Soon</p>
+                </div>
+
+                <!-- Articles & Interviews Card -->
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid var(--primary);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.08)'">
+                    <div style="width: 60px; height: 60px; background: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 1rem;">Articles & Interviews</h3>
+                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 1.5rem;">Published articles, press features, and interviews about applied theatre work.</p>
+                    <p style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">Coming Soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" style="background: var(--light); padding: 4rem 2rem;">
@@ -611,19 +768,6 @@
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Stay Connected</h2>
-            <p>Get updates on new talks, resources, and Sharon's work in applied drama</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your email" required>
-                <button type="submit">Join</button>
-            </form>
-            <p style="font-size: 0.85rem; margin-top: 1rem;">We respect your privacy</p>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -639,9 +783,9 @@
                     <a href="https://vitanova.co.uk">Vita Nova</a>
                 </div>
                 <div class="link-group">
-                    <h3>Resources</h3>
-                    <a href="#resources">Applied Drama</a>
-                    <a href="#resources">Talks & Materials</a>
+                    <h3>Work</h3>
+                    <a href="#work">Selected Work</a>
+                    <a href="#media">Talks & Media</a>
                 </div>
             </div>
             
