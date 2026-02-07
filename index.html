@@ -160,15 +160,27 @@
         /* Hero Section */
         .hero {
             margin-top: 60px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('red2.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.45)), url('red2.png') center/cover no-repeat;
             color: white;
             padding: 5rem 2rem;
             text-align: center;
-            min-height: 70vh;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(250, 250, 250, 0.6) 50%, rgba(250, 250, 250, 0.95) 100%);
+            pointer-events: none;
         }
 
         .hero h1 {
@@ -520,7 +532,11 @@
 
             .hero {
                 padding: 4rem 1rem;
-                min-height: 75vh;
+                min-height: 65vh;
+            }
+
+            .hero::after {
+                height: 100px;
             }
 
             .hero h1 {
@@ -680,7 +696,11 @@
         @media (max-width: 480px) {
             .hero {
                 padding: 3.5rem 0.75rem;
-                min-height: 80vh;
+                min-height: 70vh;
+            }
+
+            .hero::after {
+                height: 80px;
             }
 
             .hero h1 {
